@@ -1,0 +1,14 @@
+*.txt
+*/OriflameAutomation.dll
+OriflameAutomation/bin/
+.vs/OriflameAutomation/v14/.suo
+OriflameAutomation/obj/Debug/OriflameAutomation.csprojResolveAssemblyReference.cache
+OriflameAutomation/obj/
+*.cache
+*OriflameAutomation.dll
+*OriflameAutomation.pdb
+ResolveAssemblyReference.cache
+.vs/OriflameAutomation/v14/.suo
+packages/NUnit.ConsoleRunner.3.5.0/tools/debug.log
+
+OriflameAutomation/Drivers/ChromeRobotProfile/
