@@ -1,7 +1,8 @@
 *.txt
 *.dll
-*/bin/
-*/obj/
+*.suo
+*bin/
+*obj/
 *.cache
 *MakroTest.dll
 ResolveAssemblyReference.cache
