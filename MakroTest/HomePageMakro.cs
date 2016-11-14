@@ -12,6 +12,13 @@ namespace MakroTest
     class HomePageMakro
     {
 
+        public string baseBackgroundColor = "rgba(251, 228, 0, 1)";
+        public string baseColor = "rgba(25, 57, 121, 1)";
+
+        public string hoverBackgroundColor = "rgba(255, 255, 255, 1)";
+        public string hoverColor = "rgba(25, 57, 121, 1)";
+
+
         public HomePageMakro()
         {
             PageFactory.InitElements(Browser.Driver, this);
@@ -29,11 +36,12 @@ namespace MakroTest
         [FindsBy(How = How.CssSelector, Using = ".inner-scrollbar li input")]
         public IList<IWebElement> liStores { get; set; }
 
+        [FindsBy(How = How.CssSelector, Using = ".main-nav>ul>li")]
+        public IList<IWebElement> linksMainNav { get; set; }       
 
-
+        
         public HomePageMakro OpeningHoursDisplayed()
         {
-            System.Threading.Thread.Sleep(1000);
             Assert.IsTrue(liOpening.Displayed);
             Assert.IsTrue(txtOpeningHours.Displayed);
             Assert.IsTrue(liOpening.Text != null);
@@ -49,6 +57,34 @@ namespace MakroTest
 
 
             return this;
+        }
+
+        public HomePageMakro AssertNavigation()
+        {
+           var evfewv = linksMainNav.Take(linksMainNav.Count - 3);
+            foreach (IWebElement e in linksMainNav)
+            {
+                
+                AssertBaseColors(e.FindElement(By.TagName("a")));
+                Browser.Builder.MoveToElement(e).Perform();
+                AssertHoverColors(e.FindElement(By.TagName("a")));               
+            }
+
+            return this;
+        }
+
+        
+        private void AssertHoverColors(IWebElement element)
+        {
+            Assert.AreEqual(hoverBackgroundColor, element.GetCssValue("background-color"));
+            Assert.AreEqual(hoverColor, element.GetCssValue("color"));
+        }
+
+        private void AssertBaseColors(IWebElement element)
+        {
+            Assert.AreEqual(baseBackgroundColor, element.GetCssValue("background-color"));
+            Assert.AreEqual(baseColor, element.GetCssValue("color"));
+
         }
     }
 }

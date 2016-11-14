@@ -5,30 +5,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Interactions;
 
 namespace MakroTest
 {
     class Browser
     {
         public static IWebDriver Driver { get; set; }
-        public static string path;
+        public static Actions Builder { get; set; }
 
 
         
         public static void CreateDriver()
         {
-            Driver = new ChromeDriver(GetDriverFilePath(path));
+            var options = new ChromeOptions();
+            options.AddArguments(string.Format("user-data-dir={0}\\ChromeProfile", GetDriverFilePath()));
+            options.AddLocalStatePreference("acceptSslCerts", true);
+            
+            Driver = new ChromeDriver(GetDriverFilePath(), options);
+            Builder = new Actions(Driver);
+
+
 
         }
 
         internal static void Navigate()
         {
-            Browser.Driver.Navigate().GoToUrl("http://www.makro.cz");
+            Browser.Driver.Navigate().GoToUrl("https://www.makro.cz/");
         }
 
-        public static string GetDriverFilePath(string path)
+        public static string GetDriverFilePath()
         {
-            path = System.AppDomain.CurrentDomain.BaseDirectory;
+            var path = AppDomain.CurrentDomain.BaseDirectory;
             return path.Remove(path.LastIndexOf("bin")) + "Drivers";
         }
     }

@@ -1,0 +1,3 @@
+[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown printing.enabled
+[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.allow_outdated
+[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.always_authorize
