@@ -54,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Browser.cs" />
-    <Compile Include="HomePageMakro.cs" />
+    <Compile Include="Configuration\Properties.cs" />
+    <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="PageObjects\HomePage.cs" />
+    <Compile Include="PageObjects\SearchResultsPage.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

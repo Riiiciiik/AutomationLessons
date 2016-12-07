@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using MakroTest.PageObjects;
 
 namespace MakroTest
 {
@@ -15,13 +16,18 @@ namespace MakroTest
         {
             Browser.CreateDriver();
             Browser.Navigate();
-        }
-        
+        }        
 
+        [Test]
+        public void Search()
+        {
+            var page = new HomePage();
+            page.SearchFor("maso", false);
+        }
         [Test]
         public void AssertHoursAndStores()
         {
-            var page = new HomePageMakro();
+            var page = new HomePage();
             page.OpeningHoursDisplayed()
                 .StoreLinkAssert();
         }
@@ -29,8 +35,15 @@ namespace MakroTest
         [Test]
         public void AssertMenus()
         {
-            var page = new HomePageMakro();
+            var page = new HomePage();
             page.AssertNavigation();
+        }
+
+        [Test]
+        public void AssertHero()
+        {
+            var page = new HomePage()
+                .AssertHeroBanner();
         }
 
 

@@ -1,3 +1,16 @@
-[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown printing.enabled
-[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.allow_outdated
-[16088:7392:1114/172854:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.always_authorize
+[10368:12168:1207/163834:ERROR:CONSOLE(137)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.makro.cz') does not match the recipient window's origin ('https://www.google.com').", source: chrome-search://most-visited/single.js (137)
+[10368:12168:1207/163836:INFO:CONSOLE(13)] "An error occurred on the page:
+Exception in SOLR Typeahead 
+Status: 0
+Status message: error
+Response text:", source: https://www.makro.cz/js/app.min.js?v=16220-rel1611238333 (13)
+[10368:12168:1207/163836:INFO:CONSOLE(13)] "An error occurred on the page:
+Exception in SOLR Typeahead 
+Status: 0
+Status message: error
+Response text:", source: https://www.makro.cz/js/app.min.js?v=16220-rel1611238333 (13)
+[10368:10004:1207/163837:WARNING:spdy_session.cc(2466)] Received WINDOW_UPDATE for invalid stream 19
+[10368:10004:1207/163837:WARNING:spdy_session.cc(2250)] Received HEADERS for invalid stream 3
+[10368:12168:1207/163837:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown printing.enabled
+[10368:12168:1207/163837:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.allow_outdated
+[10368:12168:1207/163837:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.always_authorize

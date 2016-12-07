@@ -6,13 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace MakroTest
 {
     class Browser
     {
         public static IWebDriver Driver { get; set; }
+
         public static Actions Builder { get; set; }
+
+        public static WebDriverWait Wait { get; set; }
 
 
         
@@ -24,6 +28,7 @@ namespace MakroTest
             
             Driver = new ChromeDriver(GetDriverFilePath(), options);
             Builder = new Actions(Driver);
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
 
 
 
